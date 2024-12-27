@@ -3,5 +3,5 @@
 @tailwind utilities;
 
 body {
-  @apply font-Poppins;
+  @apply font-Poppins bg-[#F4F5F7];
 }

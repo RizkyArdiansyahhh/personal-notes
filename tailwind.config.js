@@ -7,7 +7,9 @@ export default {
         center: true,
         padding: "16px",
       },
-      colors: {},
+      colors: {
+        primary: "#c2e2a2",
+      },
       fontFamily: {
         Poppins: "Poppins",
       },

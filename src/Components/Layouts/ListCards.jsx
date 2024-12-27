@@ -1,15 +1,18 @@
 /* eslint-disable react/prop-types */
 import Card from "../Fragments/Card";
+import { showFormattedDate } from "../../utils";
 const ListCards = (props) => {
-  const { datas } = props;
+  const { notes, onDelete } = props;
   return (
-    <div className="flex flex-wrap gap-2">
-      {datas.map((data) => (
+    <div className="container flex flex-wrap gap-6  m-0">
+      {notes.map((note) => (
         <Card
-          key={data.id}
-          title={data.title}
-          content={data.body}
-          times={data.createdAt}
+          key={note.id}
+          title={note.title}
+          content={note.body}
+          time={showFormattedDate(note.createdAt)}
+          id={note.id}
+          onDelete={onDelete}
         ></Card>
       ))}
     </div>
