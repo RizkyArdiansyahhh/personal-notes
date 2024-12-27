@@ -31,6 +31,7 @@ class HomePage extends React.Component {
         ],
       };
     });
+    console.log(this.state.notes);
   }
 
   deleteNoteHandler(id) {

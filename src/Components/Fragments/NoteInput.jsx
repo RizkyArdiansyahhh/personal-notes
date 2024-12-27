@@ -18,11 +18,14 @@ class NoteInput extends React.Component {
   }
 
   onTitleChange(e) {
-    this.setState(() => {
-      return {
-        title: e.target.value,
-      };
-    });
+    const maksimalChar = 50;
+    if (e.target.value.length <= maksimalChar) {
+      this.setState(() => {
+        return {
+          title: e.target.value,
+        };
+      });
+    }
   }
   onBodyChange(e) {
     this.setState(() => {
@@ -40,6 +43,8 @@ class NoteInput extends React.Component {
     });
   }
   render() {
+    const maksimalChar = 50;
+    const remainingChars = maksimalChar - this.state.title.length;
     return (
       <div>
         <form
@@ -47,7 +52,14 @@ class NoteInput extends React.Component {
                   "
           onSubmit={this.handleSubmit}
         >
-          <div className="flex flex-col gap-y-7 mt-10">
+          <div className="mt-10 flex justify-end">
+            {remainingChars < maksimalChar ? (
+              <p className="text-red-700">{remainingChars} Karakter Tersisa</p>
+            ) : (
+              <p>{remainingChars} Karakter Tersisa</p>
+            )}
+          </div>
+          <div className="flex flex-col gap-y-7">
             <Input
               type="text"
               placeholder="Ini adalah Judul"
