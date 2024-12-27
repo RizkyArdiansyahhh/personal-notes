@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 const InputTextArea = (props) => {
-  const { name, placeholder, value, onChange = () => {} } = props;
+  const { name, placeholder, value, onChange = () => {}, style = "" } = props;
   return (
     <textarea
       name={name}
@@ -10,7 +10,7 @@ const InputTextArea = (props) => {
       required
       value={value}
       onChange={onChange}
-      className={`border border-slate-300 rounded-md shadow-sm block  px-3 py-2 w-full focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary`}
+      className={`${style} border border-slate-300 rounded-md shadow-sm block  px-3 py-2  focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary`}
     ></textarea>
   );
 };

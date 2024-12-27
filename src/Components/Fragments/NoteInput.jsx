@@ -65,6 +65,7 @@ class NoteInput extends React.Component {
               placeholder="Ini adalah Judul"
               value={this.state.title}
               onChange={this.onTitleChange}
+              style="w-full"
             />
 
             <InputTextArea
@@ -72,6 +73,7 @@ class NoteInput extends React.Component {
               placeholder="Tuliskan Catatan Kamu Disini"
               value={this.state.body}
               onChange={this.onBodyChange}
+              style="w-full"
             />
             <Button
               type="submit"
